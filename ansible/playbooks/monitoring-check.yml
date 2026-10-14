@@ -1,0 +1,29 @@
+---
+- name: Verify Nexvion monitoring services
+  hosts: local
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Check Docker service
+      ansible.builtin.command: systemctl is-active docker
+      register: docker_status
+      changed_when: false
+
+    - name: Display Docker status
+      ansible.builtin.debug:
+        msg: "Docker service status: {{ docker_status.stdout }}"
+
+    - name: Check monitoring containers
+      ansible.builtin.command:
+        argv:
+          - docker
+          - ps
+          - --format
+          - "{% raw %}{{.Names}} {{.Status}}{% endraw %}"
+      register: container_status
+      changed_when: false
+
+    - name: Display monitoring containers
+      ansible.builtin.debug:
+        var: container_status.stdout_lines
