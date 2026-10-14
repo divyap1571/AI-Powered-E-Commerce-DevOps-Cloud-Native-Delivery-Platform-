@@ -1,0 +1,9 @@
+cat > .gitignore <<'EOF'
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+EOF
+
