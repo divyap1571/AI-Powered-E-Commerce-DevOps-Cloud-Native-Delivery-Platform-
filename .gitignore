@@ -18,3 +18,5 @@ reports/
 
 # Local configuration backups
 monitoring/compose.yaml.bak
+scripts/*.bak
+scripts/*.bak
