@@ -7,3 +7,7 @@ cat > .gitignore <<'EOF'
 secrets/
 EOF
 
+monitoring/.env
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
