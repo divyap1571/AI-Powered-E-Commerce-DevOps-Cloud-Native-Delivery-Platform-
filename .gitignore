@@ -11,3 +11,10 @@ monitoring/.env
 terraform/.terraform/
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
+
+# Runtime logs and generated incident reports
+logs/
+reports/
+
+# Local configuration backups
+monitoring/compose.yaml.bak
