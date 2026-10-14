@@ -92,7 +92,7 @@ stage('Docker Smoke Test') {
 
             docker run -d \
               --name ${TEST_CONTAINER} \
-              -p 127.0.0.1:${TEST_PORT}:80 \
+              -p 127.0.0.1:${TEST_PORT}:8080 \
               ${IMAGE_NAME}:${BUILD_NUMBER}
 
             for attempt in $(seq 1 30); do
