@@ -20,3 +20,6 @@ reports/
 monitoring/compose.yaml.bak
 scripts/*.bak
 scripts/*.bak
+
+# Generated Alertmanager config contains SMTP credentials
+monitoring/alertmanager/alertmanager.generated.yml

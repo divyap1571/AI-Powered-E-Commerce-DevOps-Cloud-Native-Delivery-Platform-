@@ -16,3 +16,11 @@ groups:
           severity: warning
         annotations:
           summary: "Host CPU usage is high"
+
+      - alert: HighHostMemory
+        expr: 100 * (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Host memory usage is high"
